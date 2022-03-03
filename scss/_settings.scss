@@ -1,0 +1,170 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Circe";
+  font-weight: 400;
+  font-size: 14px;
+  background-color: $color-white;
+
+  &.body-lock {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+  }
+}
+
+section {
+  position: relative;
+  z-index: 0;
+  padding-bottom: 80px;
+
+
+  @include desktop {
+    padding-bottom: 68px;
+  }
+  @include mobile {
+    padding-bottom: 40px;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.site-container {
+
+  position: relative;
+
+
+}
+
+.bg-strips {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    //background: url("../img/white-bg-strips.png");
+    background-position-x: center;
+    z-index: -1;
+    filter: brightness(0.2);
+  }
+}
+
+.section-title {
+  font-family: "EuropeExt", sans-serif;
+  font-size: 40px;
+  letter-spacing: -0.2px;
+  color: #040810;
+
+  @include media-max(1250) {
+    font-size: 30px;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.block-hint {
+  font-family: "EuropeExt", sans-serif;
+  font-size: 12px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: #d2d2d2;
+
+  &--center {
+    text-align: center;
+  }
+
+  &--dark {
+    color: #444c54;
+  }
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.btn-reset {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.container {
+  max-width: 1345px;
+  padding: 0 40px;
+  margin: 0 auto;
+  width: 100%;
+
+  @include mobile {
+    padding: 0 20px;
+  }
+
+  &__full {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.color-primary {color: $color-primary}
+.color-white {color: $color-white}
+
+
+button, a {
+  cursor: pointer;
+}
+.btn__orange-hover {
+
+  &:hover {
+    background: #d24903 !important;
+    transition: .3s;
+  }
+  &:active {
+    background: #d24903 !important;
+    transition: .3s;
+  }
+}
+p {
+  margin: 0;
+}
+.max-768 {
+  display: none;
+  @include mobile {
+    display: flex;
+  }
+}
+.min-768 {
+  @include mobile {
+    display: none;
+  }
+}

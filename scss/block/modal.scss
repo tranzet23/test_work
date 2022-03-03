@@ -1,0 +1,122 @@
+.modal {
+  position: relative;
+  display: none;
+
+  &__overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  &__container {
+    position: relative;
+    overflow-y: auto;
+    margin: 10px;
+    border-radius: 22px;
+    padding: 46px 62px 68px;
+    width: 675px;
+    max-height: 90vh;
+    box-sizing: border-box;
+    background: $color-black;
+  }
+
+  &__btn-close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $color-white;
+      transform: rotate(0deg);
+      transition: transform 0.25s;
+    }
+
+    &:hover svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__content {
+
+  }
+
+  &--open {
+    display: block;
+  }
+}
+
+.modal[aria-hidden="false"] .modal__overlay {
+  animation: fadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.modal[aria-hidden="false"] .modal__container {
+  animation: slideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.modal[aria-hidden="true"] .modal__overlay {
+  animation: fadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.modal[aria-hidden="true"] .modal__container {
+  animation: slideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.modal .modal__container,
+.modal .modal__overlay {
+  will-change: transform;
+}
+
+/* -- Modal Animations -- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(15%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10%);
+  }
+}

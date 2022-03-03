@@ -1,0 +1,12 @@
+label.error {
+  border: none;
+  margin-bottom: 15px;
+}
+
+input:focus {
+  border: 1px solid green !important;
+}
+
+input.error {
+  border: 1px solid red !important;
+}

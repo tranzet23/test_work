@@ -1,0 +1,21 @@
+button.slick-next.slick-arrow, button.slick-prev.slick-arrow {
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+button.slick-next.slick-arrow {
+  position: relative;
+  margin-left: 37px;
+
+
+  img {
+    transform: rotate(180deg);
+  }
+}
+
+button.slick-prev.slick-arrow {
+  position: relative;
+
+}

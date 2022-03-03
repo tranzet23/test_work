@@ -1,0 +1,20 @@
+.list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+
+    & > * {
+        font-size: 12px;
+        color: red;
+    }
+}
+
+.last {
+    border: 1px solid cyan;
+}
+
+@media (max-width: 700px) {
+    .list {
+        display: block;
+    }
+}

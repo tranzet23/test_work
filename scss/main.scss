@@ -1,0 +1,26 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// small blocks
+@import "components/small-blocks/btn";
+@import "components/small-blocks/modal";
+@import "components/small-blocks/slider-settings";
+@import "components/small-blocks/upload";
+@import "components/small-blocks/accordion";
+@import "components/small-blocks/validate";
+
+
+// Big blocks
+@import "components/big-blocks/header";
+@import "components/big-blocks/advantages";
+@import "components/big-blocks/tabs";
+@import "components/big-blocks/helpful";
+@import "components/big-blocks/services";
+@import "components/big-blocks/hero";
+
+@import "components/big-blocks/footer";
+
+
+@import "block/*.scss";

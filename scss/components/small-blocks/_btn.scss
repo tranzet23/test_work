@@ -1,0 +1,38 @@
+.btn {
+  position: relative;
+  color: $color-white;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: skewX(-12deg);
+    z-index: 0;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &--border {
+
+    &:before {
+      border: 1px solid $btn-border-color;
+    }
+  }
+
+  &--bg-primary {
+    &:before {
+      background: $color-primary;
+    }
+  }
+}

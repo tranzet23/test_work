@@ -1,0 +1,292 @@
+.tabs-section {
+  position: relative;
+  background: $color-gray;
+
+  @include mobile {
+    background: $color-white;
+  }
+
+  .gray-line {
+    position: absolute;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    top: 85px;
+
+    @include desktop {
+      top: 56px;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 32px;
+
+  @include desktop {
+    padding-top: 15px;
+  }
+}
+//.wrapper {
+//  @include mobile {
+//    display: none !important;
+//  }
+//}
+
+.tab {
+  padding: 12px 0px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  color: $color-gray2;
+
+  &.active {
+    border-bottom: 3px solid #FF650C;
+    color: $color-primary;
+    z-index: 3;
+  }
+
+  @include desktop {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px;
+  }
+  @include mobile {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0;
+
+  }
+}
+
+.form__main {
+
+  .form__main-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 16px 20px;
+    position: static;
+    width: 184px;
+    height: 50px;
+    left: 40px;
+    top: 376px;
+    background: #FF650C;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: $color-white;
+    border: none;
+    outline: none;
+    margin-top: 24px;
+
+    @include media-max(650) {
+      @include flex-all-center;
+      font-size: 11px;
+      line-height: 16px;
+      height: 40px;
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 40px;
+    margin-top: 0;
+
+    @include desktop {
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 20px;
+    }
+    @include mobile {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    @include media-max(650) {
+      margin-bottom: 12px;
+    }
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 36px;
+    margin-bottom: 0;
+    @include desktop {
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+
+  .input__inner {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    label {
+      position: relative;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000000;
+      margin-bottom: 5px;
+
+      span {
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+        margin-bottom: 4px;
+
+        @include desktop {
+          font-size: 14px;
+          line-height: 24px;
+        }
+
+        &:after {
+          position: absolute;
+          content: url(../img/load.svg);
+          width: 10px;
+          height: 10px;
+          top: -9px;
+          right: -14px;
+        }
+      }
+
+    }
+  }
+
+  .input__container {
+    display: flex;
+    width: 100%;
+
+    .input__inner {
+      width: 33.3333%;
+
+      input {
+        width: 100%;
+      }
+
+      @include media-max(650) {
+        width: 100%;
+        margin-bottom: 12px;
+      }
+    }
+
+    @include media-max(650) {
+      flex-direction: column;
+    }
+  }
+
+  input {
+    height: 50px;
+    background: #FFFFFF;
+    border: none;
+    outline: none;
+    padding: 14px;
+    z-index: 2;
+
+    &:focus {
+      border: 1px solid $color-primary;
+    }
+
+    @include media-max(650) {
+      width: 100%;
+      height: 40px;
+    }
+  }
+}
+
+
+.content {
+  width: 100%;
+  margin-top: 25px;
+
+  //@include mobile {
+  //  display: none !important;
+  //}
+
+  &-item {
+    display: none;
+    padding: 0;
+
+    &__wrap {
+      width: 100%;
+    }
+
+    &.active {
+      display: flex;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 36px;
+      color: $color-black;
+      margin: 0;
+
+      @include desktop {
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+
+    &__link {
+      color: #FF650C;
+    }
+
+    &__text {
+      margin: 12px 0;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-black;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      @include desktop {
+        font-size: 14px;
+        line-height: 24px;
+        margin: 8px 0;
+      }
+    }
+  }
+}
+
+
+form.form__main {
+  background: #EFEFEF;
+  width: 100%;
+  padding: 40px;
+  margin-top: 28px;
+
+  @include desktop {
+    padding: 28px;
+    margin-top: 24px;
+  }
+  @include mobile {
+    padding: 16px;
+  }
+}
+
+
+
+.tab_item {
+  display: none;
+}
+
+.tab_item:first-child {
+  display: block;
+}

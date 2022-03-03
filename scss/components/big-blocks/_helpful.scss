@@ -1,0 +1,142 @@
+.helpful {
+
+
+  h1 {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 28px;
+
+    @include desktop {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
+    @include mobile {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    margin-left: -10px;
+    @include mobile {
+      margin-left: 0;
+    }
+
+    &-buttons {
+      @include mobile {
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+        top: 35%;
+
+        button.slick-next:after, button.slick-prev:after {
+          position: absolute;
+          content: "";
+          background-image: url(../img/arrow-white.svg);
+          width: 10px;
+          height: 10px;
+          background-repeat: no-repeat;
+        }
+
+
+        button.slick-next.slick-arrow, button.slick-prev.slick-arrow {
+          @include mobile {
+            @include flex-all-center;
+            position: absolute;
+            width: 33px;
+            height: 33px;
+            background: #F68E56;
+          }
+        }
+
+        button.slick-next.slick-arrow {
+          @include mobile {
+            right: -19px;
+            transform: rotate(180deg);
+          }
+
+          img {
+            @include mobile {
+              display: none !important;
+            }
+          }
+        }
+        button.slick-prev.slick-arrow {
+          @include mobile {
+            left: -20px;
+          }
+
+          img {
+            @include mobile {
+              display: none !important;
+            }
+          }
+        }
+      }
+    }
+
+
+    &-img_wrap {
+      height: 311px;
+      display: flex;
+      flex-flow: column-reverse;
+      @include media-max(1400) {
+        height: 231px;
+      }
+      @include media-max(930) {
+        height: 190px;
+      }
+
+
+      @include mobile {
+        height: auto;
+      }
+    }
+
+    &-item {
+
+      &_inner {
+        margin-left: 10px;
+
+        @include mobile {
+          margin-left: 0;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      p {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+        color: $color-black;
+        margin-top: 16px;
+
+        @include desktop {
+          font-size: 18px;
+          line-height: 28px;
+        }
+
+        @include mobile {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+
+  &-top {
+    @include flex-all-sb;
+  }
+}
+
+
+
+
+
+
+
